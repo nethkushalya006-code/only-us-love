@@ -13,8 +13,8 @@
 <script type="module">
 /* Replace these placeholders with your own Supabase Project URL and publishable key.
    Never use a secret/service_role key in a public HTML file. */
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
-const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
+const SUPABASE_URL = "https://qbbxqirbwznuvwbikxuc.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "OYAGE_PUBLISHABLE_KEY";
 const statusEl=document.getElementById("status"),authCard=document.getElementById("authCard"),homeCard=document.getElementById("homeCard");let supabase=null;
 function status(t){statusEl.textContent=t}function showAuth(){authCard.classList.remove("hidden");homeCard.classList.add("hidden")}function showHome(u){authCard.classList.add("hidden");homeCard.classList.remove("hidden");document.getElementById("signedInAs").textContent="Signed in as "+(u.email||"your account")+".";
 }
