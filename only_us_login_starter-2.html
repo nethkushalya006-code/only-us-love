@@ -14,7 +14,7 @@
 /* Replace these placeholders with your own Supabase Project URL and publishable key.
    Never use a secret/service_role key in a public HTML file. */
 const SUPABASE_URL = "https://qbbxqirbwznuvwbikxuc.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "OYAGE_PUBLISHABLE_KEY";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_CyVT-DwFOQxyeX9Zxg_a1g_JM6ySlqt";
 const statusEl=document.getElementById("status"),authCard=document.getElementById("authCard"),homeCard=document.getElementById("homeCard");let supabase=null;
 function status(t){statusEl.textContent=t}function showAuth(){authCard.classList.remove("hidden");homeCard.classList.add("hidden")}function showHome(u){authCard.classList.add("hidden");homeCard.classList.remove("hidden");document.getElementById("signedInAs").textContent="Signed in as "+(u.email||"your account")+".";
 }
