@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091c">
+<title>Only Us — Our Private World</title>
+<style>
+:root{--bg:#0b0712;--panel:#171023;--purple:#a879ff;--pink:#f1a5ff;--text:#fff8ff;--muted:#bdb0cc}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#281442 0%,var(--bg) 56%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:24px 17px 45px}.brand{text-align:center;padding:22px 8px 26px}.orb{width:76px;height:76px;border:1px solid #b68aff66;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:linear-gradient(145deg,#382052,#140d20);box-shadow:0 0 36px #a879ff22;font-size:31px}.eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:10px;color:var(--pink)}h1{font-size:32px;letter-spacing:1px;margin:9px 0 7px} .sub{color:var(--muted);font-size:14px;line-height:1.6;margin:0 auto;max-width:340px}
+.card{background:#171023e8;border:1px solid #b68aff2c;border-radius:22px;padding:22px;margin:13px 0;box-shadow:0 16px 45px #0004}.label{font-size:12px;color:var(--muted);display:block;margin:13px 0 7px}input,textarea,select{width:100%;border:1px solid #49335f;background:#0e0916;color:white;border-radius:12px;padding:13px;font:inherit;outline:none}input:focus,textarea:focus{border-color:var(--purple)}button{border:0;border-radius:12px;padding:13px 15px;font-weight:700;font-size:14px;cursor:pointer}.primary{width:100%;margin-top:17px;color:#170d22;background:linear-gradient(100deg,#c5a1ff,#f2a8f3)}.secondary{background:#281b39;color:#f4e7ff;border:1px solid #5d4278}.tiny{font-size:11px;color:#a99bb8;line-height:1.5}.hidden{display:none!important}.topline{display:flex;align-items:center;justify-content:space-between;gap:10px}.topline h2{font-size:18px;margin:0}.pill{font-size:10px;letter-spacing:1px;color:#e6caff;border:1px solid #76549c;padding:6px 9px;border-radius:99px}.hero{background:linear-gradient(135deg,#2d1742,#171023 70%);text-align:center;padding:25px 18px}.hero h2{font-size:25px;margin:8px 0}.hero p{color:var(--muted);line-height:1.6;font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{min-height:105px;text-align:left;background:#21152f;color:#fff;border:1px solid #5a3b75;padding:15px;border-radius:17px}.tile span{display:block;font-size:23px;margin-bottom:10px}.tile strong{font-size:13px}.tile small{display:block;color:#bfb0cf;margin-top:4px}.section-title{font-size:14px;margin:22px 4px 10px}.note{border-left:2px solid var(--purple);padding:12px 14px;color:#e8dff2;background:#21152f;border-radius:0 12px 12px 0;font-size:13px;line-height:1.7}.foot{text-align:center;color:#847590;font-size:10px;margin-top:25px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="orb">♡</div>
+    <div class="eyebrow">A little world for two</div>
+    <h1>Only Us</h1>
+    <p class="sub">Our private world. Our memories. Our little forever. 💜</p>
+  </header>
+
+  <section id="login" class="card">
+    <div class="topline"><h2>Come on in 💌</h2><span class="pill">JUST US</span></div>
+    <p class="sub" style="margin:9px 0 15px;max-width:none">Choose your side to preview your space.</p>
+    <label class="label" for="who">Who's opening the door?</label>
+    <select id="who"><option value="you">Me 💜</option><option value="suddi">My Suddi ❤️</option></select>
+    <label class="label" for="pass">Our passphrase</label>
+    <input id="pass" type="password" placeholder="Enter passphrase" autocomplete="off">
+    <button class="primary" onclick="enterSite()">Open our world ✨</button>
+    <p class="tiny" style="margin-top:13px">Prototype preview only: this demo screen is not real account security. Don't enter a real password here.</p>
+  </section>
+
+  <main id="home" class="hidden">
+    <section class="card hero">
+      <div class="eyebrow">Welcome back, <span id="person">love</span></div>
+      <h2>It's always been you. 💜</h2>
+      <p>A small place to keep the things we never want to forget.</p>
+      <div class="pill" style="display:inline-block">YOU + ME · ALWAYS</div>
+    </section>
+    <div class="section-title">Our little universe</div>
+    <div class="grid">
+      <button class="tile" onclick="showPanel('memories')"><span>📸</span><strong>Our Memories</strong><small>Moments worth keeping</small></button>
+      <button class="tile" onclick="showPanel('letters')"><span>💌</span><strong>Love Letters</strong><small>Words from the heart</small></button>
+      <button class="tile" onclick="showPanel('dates')"><span>🗓️</span><strong>Our Dates</strong><small>Anniversaries & plans</small></button>
+      <button class="tile" onclick="showPanel('surprises')"><span>🎁</span><strong>Little Surprises</strong><small>Something just for you</small></button>
+    </div>
+    <section id="panel" class="card hidden"></section>
+    <section class="card">
+      <div class="section-title" style="margin:0 0 12px">A note for you</div>
+      <div class="note">No matter how busy life gets, I hope we always make time for us. One day at a time, one memory at a time. 💜</div>
+    </section>
+    <button class="secondary" style="width:100%" onclick="logout()">Close our world</button>
+  </main>
+  <div class="foot">Made with love · Only Us ♡<br>Design prototype — online private login and syncing are not connected yet.</div>
+</div>
+<script>
+function enterSite(){
+  const p=document.getElementById('pass').value;
+  if(!p){alert('Enter any demo passphrase to preview the design. Please do not use a real password.');return}
+  const who=document.getElementById('who').value;
+  document.getElementById('person').textContent=who==='suddi'?'my Suddi':'my love';
+  document.getElementById('login').classList.add('hidden');
+  document.getElementById('home').classList.remove('hidden');
+}
+function logout(){document.getElementById('home').classList.add('hidden');document.getElementById('login').classList.remove('hidden');document.getElementById('pass').value='';document.getElementById('panel').classList.add('hidden')}
+function showPanel(which){
+ const panel=document.getElementById('panel'); panel.classList.remove('hidden');
+ const content={
+ memories:`<h2>📸 Our Memories</h2><p class="sub" style="margin:10px 0">Your favorite photos and the stories behind them will live here.</p><label class="label">Memory title</label><input placeholder="Our first date…"><label class="label">A little story</label><textarea rows="3" placeholder="What do you want to remember?"></textarea><p class="tiny">Saving photos and notes needs the private database connection in the next build.</p>`,
+ letters:`<h2>💌 Love Letters</h2><p class="sub" style="margin:10px 0">Write something you want your person to read.</p><label class="label">For</label><select><option>My Suddi ❤️</option><option>Me 💜</option></select><label class="label">Your letter</label><textarea rows="4" placeholder="Hey Suddi…"></textarea><p class="tiny">Private sending and syncing will be enabled after backend setup.</p>`,
+ dates:`<h2>🗓️ Our Dates</h2><p class="sub" style="margin:10px 0">Keep your special days close.</p><label class="label">Special day</label><input type="date"><label class="label">What are we celebrating?</label><input placeholder="Our anniversary…"><p class="tiny">Anniversary countdown can be connected once the real start date is added.</p>`,
+ surprises:`<h2>🎁 Little Surprises</h2><div class="note">Surprise, Suddi… 💜<br>Even on the days we can't meet, I hope you feel loved, remembered, and chosen.</div><p class="sub" style="margin:12px 0">We can add scheduled letters, birthday surprises and private videos here.</p>`
+ };
+ panel.innerHTML=content[which]+`<button class="secondary" style="margin-top:12px" onclick="document.getElementById('panel').classList.add('hidden')">Back</button>`;
+}
+</script>
+</body></html>
